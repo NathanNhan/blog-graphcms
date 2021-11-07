@@ -7,6 +7,7 @@ import { grpahCMSImageLoader } from "../util";
 import { getSimilarPosts, getRecentPosts } from "../services";
 
 const PostWidget = ({ categories, slug }) => {
+  console.log("My post have" , categories, slug);
   const [relatedPosts, setRelatedPosts] = useState([]);
 
   useEffect(() => {
@@ -30,7 +31,6 @@ const PostWidget = ({ categories, slug }) => {
         <div key={index} className="flex items-center w-full mb-4">
           <div className="w-16 flex-none">
             <img
-             
               alt={post.title}
               height="60px"
               width="60px"

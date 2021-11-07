@@ -33,16 +33,31 @@ export const getPosts = async () => {
     }
   `;
   const result = await request(graphqlAPI, query);
+  //api trả về kết quả 
   return result.postsConnection.edges;
 };
 
 //get categories
-export const getCategories = async() => {
+// export const getCategories = async() => {
+//   const query = gql`
+//     query MyQuery {
+//       categories {
+//         name
+//         slug
+//       }
+//     }
+//   `;
+//   const result = await request(graphqlAPI, query);
+//   return result.categories;
+// }
+
+
+export const getCategories = async () => {
   const query = gql`
     query MyQuery {
       categories {
-        name
         slug
+        name
       }
     }
   `;
